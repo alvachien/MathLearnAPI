@@ -25,15 +25,6 @@ namespace MathLearnAPI.Models
         public virtual DbSet<Tag> Tag { get; set; }
         public virtual DbSet<Useraward> Useraward { get; set; }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-//            if (!optionsBuilder.IsConfigured)
-//            {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-//                optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Initial Catalog=acquizdb;Integrated Security=True;");
-//            }
-        //}
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Awardplan>(entity =>

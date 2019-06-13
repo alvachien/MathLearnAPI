@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNet.OData.Batch;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -74,12 +75,12 @@ namespace MathLearnAPI
             //modelBuilder.Namespace = typeof(ProductFamily).Namespace;
 
             var model = modelBuilder.GetEdmModel();
-
+            app.UseODataBatching();
             app.UseMvc(builder =>
             {
                 builder.Select().Expand().Filter().OrderBy().MaxTop(100).Count();
 
-                builder.MapODataServiceRoute("odata", "odata", model);
+                builder.MapODataServiceRoute("odata", "odata", model, new DefaultODataBatchHandler());
             });
         }
     }

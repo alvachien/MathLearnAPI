@@ -22,7 +22,7 @@ namespace MathLearnAPI.Controllers
         }
 
         /// <summary>
-        /// Adds support for getting products, for example:
+        /// Adds support for getting knowledges, for example:
         /// 
         /// GET /Knowledges
         /// GET /Knowledges?$filter=Name eq 'Windows 95'
@@ -42,7 +42,7 @@ namespace MathLearnAPI.Controllers
 
         // GET: api/Knowledges/5
         /// <summary>
-        /// Adds support for getting a product by key, for example:
+        /// Adds support for getting a knowledge by key, for example:
         /// 
         /// GET /Knowledges(1)
         /// </summary>
@@ -156,7 +156,7 @@ namespace MathLearnAPI.Controllers
         //}
 
         /// <summary>
-        /// Support for partial updates of products
+        /// Support for partial updates of knowledges
         /// </summary>
         public async Task<IActionResult> Patch([FromODataUri] int key, Delta<Knowledge> knowledge)
         {
@@ -194,7 +194,7 @@ namespace MathLearnAPI.Controllers
 
         // DELETE: api/Knowledges/5
         /// <summary>
-        /// Support for deleting products by key.
+        /// Support for deleting knowledge by key.
         /// </summary>
         public async Task<IActionResult> Delete([FromODataUri] int key)
         {

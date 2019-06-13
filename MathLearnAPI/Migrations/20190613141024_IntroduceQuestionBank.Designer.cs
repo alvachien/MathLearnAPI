@@ -4,14 +4,16 @@ using MathLearnAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MathLearnAPI.Migrations
 {
     [DbContext(typeof(acquizdbContext))]
-    partial class acquizdbContextModelSnapshot : ModelSnapshot
+    [Migration("20190613141024_IntroduceQuestionBank")]
+    partial class IntroduceQuestionBank
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

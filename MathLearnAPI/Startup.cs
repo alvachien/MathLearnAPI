@@ -22,9 +22,8 @@ namespace MathLearnAPI
         public static readonly LoggerFactory MyLoggerFactory
             = new LoggerFactory(new[] { new ConsoleLoggerProvider((_, __) => true, true) });
 
-        private const string ConnectionString
-            = @"Server=.\SQLEXPRESS;Initial Catalog=acquizdb;Integrated Security=True;";
         readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+        internal static String ConnectionString { get; private set; }
 
         public Startup(IConfiguration configuration)
         {
@@ -48,6 +47,7 @@ namespace MathLearnAPI
                                 .AllowAnyMethod(); ;
                 });
             });
+            ConnectionString = Configuration.GetConnectionString("DebugConnection");
 
             services.AddDbContext<acquizdbContext>(opt => opt.UseSqlServer(ConnectionString).UseLoggerFactory(MyLoggerFactory));
             services.AddOData();
@@ -66,7 +66,7 @@ namespace MathLearnAPI
 
             ODataModelBuilder modelBuilder = new ODataConventionModelBuilder();
             modelBuilder.EntitySet<Knowledge>("Knowledges");
-            // modelBuilder.EntitySet<Tag>("Tags");
+            modelBuilder.EntitySet<Questionbank>("Questionbanks");
 
             //var createProduct = modelBuilder.EntityType<ProductFamily>().Action("CreateProduct");
             //createProduct.Parameter<string>("Name");
@@ -82,29 +82,5 @@ namespace MathLearnAPI
                 builder.MapODataServiceRoute("odata", "odata", model);
             });
         }
-
-        //public Startup(IConfiguration configuration)
-        //{
-        //    Configuration = configuration;
-        //}
-
-        //public IConfiguration Configuration { get; }
-
-        //// This method gets called by the runtime. Use this method to add services to the container.
-        //public void ConfigureServices(IServiceCollection services)
-        //{
-        //    services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-        //}
-
-        //// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        //public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        //{
-        //    if (env.IsDevelopment())
-        //    {
-        //        app.UseDeveloperExceptionPage();
-        //    }
-
-        //    app.UseMvc();
-        //}
     }
 }

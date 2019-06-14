@@ -48,7 +48,9 @@ namespace MathLearnAPI
                                 .AllowAnyMethod(); ;
                 });
             });
-            ConnectionString = Configuration.GetConnectionString("DebugConnection");
+
+            if (String.IsNullOrEmpty(ConnectionString))
+                ConnectionString = Configuration.GetConnectionString("DebugConnection");
 
             services.AddDbContext<acquizdbContext>(opt => opt.UseSqlServer(ConnectionString).UseLoggerFactory(MyLoggerFactory));
             services.AddOData();
@@ -68,11 +70,19 @@ namespace MathLearnAPI
             ODataModelBuilder modelBuilder = new ODataConventionModelBuilder();
             modelBuilder.EntitySet<Knowledge>("Knowledges");
             modelBuilder.EntitySet<Questionbank>("Questionbanks");
-
+            modelBuilder.EntitySet<Qbklink>("Qbklinks");
+            modelBuilder.EntitySet<Permuser>("Permusers");
+            modelBuilder.EntitySet<Quiz>("Quizs");
+            modelBuilder.EntitySet<Quizsection>("Quizsections");
+            modelBuilder.EntitySet<Quizfaillog>("Quizfaillogs");
+            modelBuilder.EntitySet<Quizuser>("Quizusers");
+            modelBuilder.EntitySet<Tag>("Tags");
+            modelBuilder.EntitySet<Useraward>("Userawards");
+            
             //var createProduct = modelBuilder.EntityType<ProductFamily>().Action("CreateProduct");
             //createProduct.Parameter<string>("Name");
             //createProduct.Returns<int>();
-            //modelBuilder.Namespace = typeof(ProductFamily).Namespace;
+            modelBuilder.Namespace = typeof(Knowledge).Namespace;
 
             var model = modelBuilder.GetEdmModel();
             app.UseODataBatching();

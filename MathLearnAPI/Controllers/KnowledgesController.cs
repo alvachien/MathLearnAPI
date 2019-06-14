@@ -10,8 +10,6 @@ using Microsoft.AspNet.OData;
 
 namespace MathLearnAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class KnowledgesController : ODataController
     {
         private readonly acquizdbContext _context;

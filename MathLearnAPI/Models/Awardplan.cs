@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MathLearnAPI.Models
 {
     public partial class Awardplan
     {
+        [Key]
         public int Planid { get; set; }
         public string Tgtuser { get; set; }
         public string Createdby { get; set; }

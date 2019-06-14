@@ -10,8 +10,6 @@ using Microsoft.AspNet.OData;
 
 namespace MathLearnAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class QuestionBanksController : ODataController
     {
         private readonly acquizdbContext _context;
@@ -25,14 +23,14 @@ namespace MathLearnAPI.Controllers
         /// Adds support for getting question banks, for example:
         /// 
         /// GET /QuestionBanks
-        /// GET /QuestionBanks?$filter=Name eq 'Windows 95'
+        /// GET /QuestionBanks?$filter=Id eq '1'
         /// GET /QuestionBanks?
         /// 
         /// <remarks>
         /// Support for $filter, $orderby, $top and $skip is provided by the [EnableQuery] attribute.
         /// </remarks>
         /// </summary>
-        /// <returns>An IQueryable with all the products you want it to be possible for clients to reach.</returns>
+        /// <returns>An IQueryable with all the questionbanks you want it to be possible for clients to reach.</returns>
         [EnableQuery]
         public IQueryable<Questionbank> Get()
         {
@@ -47,7 +45,7 @@ namespace MathLearnAPI.Controllers
         /// GET /QuestionBanks(1)
         /// </summary>
         /// <param name="key">The key of the question bank required</param>
-        /// <returns>The Knowledge</returns>
+        /// <returns>The Question Bank</returns>
         [EnableQuery]
         public SingleResult<Questionbank> Get([FromODataUri] int key)
         {
@@ -174,6 +172,11 @@ namespace MathLearnAPI.Controllers
         //    var family = await _db.Products.Where(p => p.Id == key).Select(p => p.Family).SingleOrDefaultAsync();
         //    return Ok(family);
         //}
+
+        private bool QuestionbankExists(int id)
+        {
+            return _context.Questionbank.Any(e => e.Id == id);
+        }
 
     }
 }

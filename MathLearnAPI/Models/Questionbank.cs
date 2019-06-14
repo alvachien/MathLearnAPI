@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MathLearnAPI.Models
 {
@@ -10,7 +11,9 @@ namespace MathLearnAPI.Models
             Qbklink = new HashSet<Qbklink>();
         }
 
+        [Key]
         public int Id { get; set; }
+        [Required]
         public string Content { get; set; }
         public byte[] Attachment1 { get; set; }
         public byte[] Attachment2 { get; set; }

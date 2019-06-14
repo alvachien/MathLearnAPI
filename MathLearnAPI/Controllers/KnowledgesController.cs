@@ -208,38 +208,18 @@ namespace MathLearnAPI.Controllers
             return StatusCode(204); // HttpStatusCode.NoContent
         }
 
-        //[HttpDelete("{id}")]
-        //public async Task<IActionResult> DeleteKnowledge([FromRoute] int id)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-
-        //    var knowledge = await _context.Knowledge.FindAsync(id);
-        //    if (knowledge == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    _context.Knowledge.Remove(knowledge);
-        //    await _context.SaveChangesAsync();
-
-        //    return Ok(knowledge);
-        //}
-
-        ///// <summary>
-        ///// Adds support for getting a ProductFamily from a Product, for example:
-        ///// 
-        ///// GET /Products(11)/Family
-        ///// </summary>
-        ///// <param name="key">The id of the Product</param>
-        ///// <returns>The related ProductFamily</returns>
-        //public async Task<IActionResult> GetFamily([FromODataUri] int key)
-        //{
-        //    var family = await _db.Products.Where(p => p.Id == key).Select(p => p.Family).SingleOrDefaultAsync();
-        //    return Ok(family);
-        //}
+        /// <summary>
+        /// Adds support for getting the linkages from a Knowledge, for example:
+        /// 
+        /// GET /Knowledges(11)/Qblink
+        /// </summary>
+        /// <param name="key">The id of the Product</param>
+        /// <returns>The related link</returns>
+        public async Task<IActionResult> GetQbklink([FromODataUri] int key)
+        {
+            var links = _context.Knowledge.Where(p => p.Id == key).Select(p => p.Qbklink);
+            return Ok(links);
+        }
 
         ///// <summary>
         ///// Support for creating links between entities in this entity set and other entities

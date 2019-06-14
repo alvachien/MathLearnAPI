@@ -10,11 +10,11 @@ using Microsoft.AspNet.OData;
 
 namespace MathLearnAPI.Controllers
 {
-    public class QuestionBanksController : ODataController
+    public class QuestionbanksController : ODataController
     {
         private readonly acquizdbContext _context;
 
-        public QuestionBanksController(acquizdbContext context)
+        public QuestionbanksController(acquizdbContext context)
         {
             _context = context;
         }

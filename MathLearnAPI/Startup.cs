@@ -78,7 +78,7 @@ namespace MathLearnAPI
             modelBuilder.EntitySet<Quizuser>("Quizusers");
             modelBuilder.EntitySet<Tag>("Tags");
             modelBuilder.EntitySet<Useraward>("Userawards");
-            
+
             //var createProduct = modelBuilder.EntityType<ProductFamily>().Action("CreateProduct");
             //createProduct.Parameter<string>("Name");
             //createProduct.Returns<int>();

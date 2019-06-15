@@ -330,5 +330,7 @@ ASALocalRun/
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
 
-# Appseeting
-appsettings.*.json
+# Project specific
+appsettings*.json
+uploads/
+src/MathLearnAPI/uploads/

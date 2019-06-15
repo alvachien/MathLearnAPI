@@ -15,6 +15,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging.Console;
 using MathLearnAPI.Models;
 using Microsoft.AspNet.OData.Builder;
+using System.IO;
 
 namespace MathLearnAPI
 {
@@ -24,15 +25,21 @@ namespace MathLearnAPI
             = new LoggerFactory(new[] { new ConsoleLoggerProvider((_, __) => true, true) });
 
         readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+        internal static String UploadFolder { get; private set; }
         internal static String ConnectionString { get; private set; }
 
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
+
+            UploadFolder = Path.Combine(env.ContentRootPath, @"uploads");
+            if (!Directory.Exists(UploadFolder))
+            {
+                Directory.CreateDirectory(UploadFolder);
+            }
         }
 
         public IConfiguration Configuration { get; }
-        
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)

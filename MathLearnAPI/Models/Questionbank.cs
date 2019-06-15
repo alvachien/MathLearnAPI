@@ -15,11 +15,16 @@ namespace MathLearnAPI.Models
         public int Id { get; set; }
         [Required]
         public string Content { get; set; }
-        public byte[] Attachment1 { get; set; }
-        public byte[] Attachment2 { get; set; }
-        public byte[] Attachment3 { get; set; }
-        public byte[] Attachment4 { get; set; }
-        public byte[] Attachment5 { get; set; }
+        [StringLength(50)]
+        public string Attachment1 { get; set; }
+        [StringLength(50)]
+        public string Attachment2 { get; set; }
+        [StringLength(50)]
+        public string Attachment3 { get; set; }
+        [StringLength(50)]
+        public string Attachment4 { get; set; }
+        [StringLength(50)]
+        public string Attachment5 { get; set; }
 
         public ICollection<Qbklink> Qbklink { get; set; }
     }

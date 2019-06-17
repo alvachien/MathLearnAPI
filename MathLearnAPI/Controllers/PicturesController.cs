@@ -50,7 +50,6 @@ namespace MathLearnAPI.Controllers
 
         // POST: api/Pictures
         [HttpPost]
-        [Authorize]
         public async Task<IActionResult> UploadPhotos(ICollection<IFormFile> files)
         {
             if (Request.Form.Files.Count <= 0)
@@ -117,7 +116,7 @@ namespace MathLearnAPI.Controllers
                 await file.CopyToAsync(fileStream);
             }
 
-            return Ok("api/Pictures/" + filename);
+            return new JsonResult("api/Pictures/" + filename + "." + fileext);
         }
 
         // PUT: api/Pictures/5

@@ -92,7 +92,7 @@ namespace MathLearnAPI.Controllers
         /// <summary>
         /// Support for creating question bank
         /// </summary>
-        public async Task<IActionResult> Post(Questionbank qbank)
+        public async Task<IActionResult> Post([FromBody] Questionbank qbank)
         {
             if (!ModelState.IsValid)
             {

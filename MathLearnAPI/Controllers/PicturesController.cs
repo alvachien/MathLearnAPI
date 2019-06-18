@@ -116,7 +116,7 @@ namespace MathLearnAPI.Controllers
                 await file.CopyToAsync(fileStream);
             }
 
-            return new JsonResult("api/Pictures/" + filename + "." + fileext);
+            return new JsonResult("api/Pictures/" + filename + fileext);
         }
 
         // PUT: api/Pictures/5

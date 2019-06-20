@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace MathLearnAPI.Models
 {
@@ -12,9 +11,7 @@ namespace MathLearnAPI.Models
             Quizsection = new HashSet<Quizsection>();
         }
 
-        [Key]
         public int Quizid { get; set; }
-        [Required]
         public short Quiztype { get; set; }
         public string Basicinfo { get; set; }
         public string Attenduser { get; set; }

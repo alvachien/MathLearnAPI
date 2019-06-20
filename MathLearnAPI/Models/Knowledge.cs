@@ -11,12 +11,14 @@ namespace MathLearnAPI.Models
             Qbklink = new HashSet<Qbklink>();
         }
 
+        [Key]
         public int Id { get; set; }
+        public byte? Category { get; set; }
+        [Required]
         [StringLength(50)]
-        [Required]
         public string Name { get; set; }
-        [Required]
         public string Content { get; set; }
+        public bool? CanGenerate { get; set; }
 
         public ICollection<Qbklink> Qbklink { get; set; }
     }

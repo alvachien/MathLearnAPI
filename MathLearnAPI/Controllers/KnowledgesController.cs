@@ -38,7 +38,7 @@ namespace MathLearnAPI.Controllers
             return _context.Knowledge;
         }
 
-        // GET: api/Knowledges/5
+        // GET: /Knowledges/5
         /// <summary>
         /// Adds support for getting a knowledge by key, for example:
         /// 
@@ -52,11 +52,11 @@ namespace MathLearnAPI.Controllers
             return SingleResult.Create(_context.Knowledge.Where(p => p.Id == key));
         }
 
-        // PUT: api/Knowledges/5
+        // PUT: /Knowledges/5
         /// <summary>
         /// Support for updating Knowledges
         /// </summary>
-        public async Task<IActionResult> Put([FromODataUri] int key, Knowledge update)
+        public async Task<IActionResult> Put([FromODataUri] int key, [FromBody] Knowledge update)
         {
             if (!ModelState.IsValid)
             {
@@ -122,11 +122,11 @@ namespace MathLearnAPI.Controllers
         //    return NoContent();
         //}
 
-        // POST: api/Knowledges
+        // POST: /Knowledges
         /// <summary>
         /// Support for creating knowledge
         /// </summary>
-        public async Task<IActionResult> Post(Knowledge knowledge)
+        public async Task<IActionResult> Post([FromBody] Knowledge knowledge)
         {
             if (!ModelState.IsValid)
             {
@@ -156,7 +156,7 @@ namespace MathLearnAPI.Controllers
         /// <summary>
         /// Support for partial updates of knowledges
         /// </summary>
-        public async Task<IActionResult> Patch([FromODataUri] int key, Delta<Knowledge> knowledge)
+        public async Task<IActionResult> Patch([FromODataUri] int key, [FromBody] Delta<Knowledge> knowledge)
         {
             if (!ModelState.IsValid)
             {
@@ -190,7 +190,7 @@ namespace MathLearnAPI.Controllers
             return Updated(entity);
         }
 
-        // DELETE: api/Knowledges/5
+        // DELETE: /Knowledges/5
         /// <summary>
         /// Support for deleting knowledge by key.
         /// </summary>

@@ -58,6 +58,5 @@ namespace MathLearnAPI.Controllers
 
             return StatusCode(204); // HttpStatusCode.NoContent
         }
-
     }
 }

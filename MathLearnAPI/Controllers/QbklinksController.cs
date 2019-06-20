@@ -32,7 +32,7 @@ namespace MathLearnAPI.Controllers
             return SingleResult.Create(_context.Qbklink.Where(p => p.Qbid == qbid && p.Kwgid == kwgid));
         }
 
-        public async Task<IActionResult> Post(Qbklink link)
+        public async Task<IActionResult> Post([FromBody]Qbklink link)
         {
             if (!ModelState.IsValid)
             {

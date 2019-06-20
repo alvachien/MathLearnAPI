@@ -53,7 +53,6 @@ project.lock.json
 project.fragment.lock.json
 artifacts/
 **/Properties/launchSettings.json
-appsettings*.json
 
 # StyleCop
 StyleCopReport.xml
@@ -331,6 +330,6 @@ ASALocalRun/
 .mfractor/
 
 # Project specific
-appsettings*.json
+**/appsettings*.json
 uploads/
 src/MathLearnAPI/uploads/

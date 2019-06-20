@@ -8,6 +8,7 @@ namespace MathLearnAPI.Models
     {
         [Key]
         public int Planid { get; set; }
+        [Required]
         public string Tgtuser { get; set; }
         public string Createdby { get; set; }
         public DateTime Validfrom { get; set; }

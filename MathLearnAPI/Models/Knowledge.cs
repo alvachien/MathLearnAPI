@@ -17,6 +17,7 @@ namespace MathLearnAPI.Models
         [Required]
         [StringLength(50)]
         public string Name { get; set; }
+        [Required]
         public string Content { get; set; }
         public bool? CanGenerate { get; set; }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MathLearnAPI.Models
 {
@@ -11,7 +12,11 @@ namespace MathLearnAPI.Models
             PermuserUser = new HashSet<Permuser>();
         }
 
+
+        [Key]
         public string Userid { get; set; }
+        [Required]
+        [StringLength(50)]
         public string Displayas { get; set; }
         public string Others { get; set; }
         public string Award { get; set; }

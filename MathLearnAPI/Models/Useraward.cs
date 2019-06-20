@@ -16,5 +16,9 @@ namespace MathLearnAPI.Models
         public int? Qid { get; set; }
         public string Used { get; set; }
         public bool? Publish { get; set; }
+
+        public Quizuser Awarduser { get; set; }
+        public Awardplan AwardPlan { get; set; }
+        public Quiz Quiz { get; set; }
     }
 }

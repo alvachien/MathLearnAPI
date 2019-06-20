@@ -73,18 +73,27 @@ namespace MathLearnAPI.Models
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
-                entity.Property(e => e.CanGenerate).HasColumnName("CAN_GENERATE");
-
                 entity.Property(e => e.Category).HasColumnName("CATEGORY");
-
-                entity.Property(e => e.Content)
-                    .IsRequired()
-                    .HasColumnName("CONTENT");
 
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasColumnName("NAME")
                     .HasMaxLength(50);
+
+                entity.Property(e => e.Content)
+                    .IsRequired()
+                    .HasColumnName("CONTENT");
+
+                entity.Property(e => e.CanGenerate).HasColumnName("CAN_GENERATE");
+
+                entity.Property(e => e.Attachment1)
+                    .HasColumnName("ATTACHMENT1");
+
+                entity.Property(e => e.Attachment2)
+                    .HasColumnName("ATTACHMENT2");
+
+                entity.Property(e => e.Attachment3)
+                    .HasColumnName("ATTACHMENT3");
             });
 
             modelBuilder.Entity<Permuser>(entity =>
@@ -140,36 +149,35 @@ namespace MathLearnAPI.Models
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
-                entity.Property(e => e.Attachment1)
-                    .HasColumnName("ATTACHMENT1")
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.Attachment2)
-                    .HasColumnName("ATTACHMENT2")
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.Attachment3)
-                    .HasColumnName("ATTACHMENT3")
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.Attachment4)
-                    .HasColumnName("ATTACHMENT4")
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.Attachment5)
-                    .HasColumnName("ATTACHMENT5")
-                    .HasMaxLength(50);
+                entity.Property(e => e.Category).HasColumnName("CATEGORY");
 
                 entity.Property(e => e.BriefCont)
                     .IsRequired()
                     .HasColumnName("BRIEF_CONT")
                     .HasMaxLength(50);
 
-                entity.Property(e => e.Category).HasColumnName("CATEGORY");
+                entity.Property(e => e.Attachment1)
+                    .HasColumnName("ATTACHMENT1");
+
+                entity.Property(e => e.Attachment2)
+                    .HasColumnName("ATTACHMENT2");
+
+                entity.Property(e => e.Attachment3)
+                    .HasColumnName("ATTACHMENT3");
+
+                entity.Property(e => e.Attachment4)
+                    .HasColumnName("ATTACHMENT4");
+
+                entity.Property(e => e.Attachment5)
+                    .HasColumnName("ATTACHMENT5");
 
                 entity.Property(e => e.Content)
                     .IsRequired()
                     .HasColumnName("CONTENT");
+
+                entity.Property(e => e.Answer)
+                    .IsRequired()
+                    .HasColumnName("ANSWER");
             });
 
             modelBuilder.Entity<Quiz>(entity =>

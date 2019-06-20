@@ -24,6 +24,7 @@ namespace MathLearnAPI.Models
         public string Attachment3 { get; set; }
         public string Attachment4 { get; set; }
         public string Attachment5 { get; set; }
+        public string Answer { get; set; }
 
         public ICollection<Qbklink> Qbklink { get; set; }
     }

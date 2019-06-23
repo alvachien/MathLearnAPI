@@ -176,7 +176,7 @@ namespace MathLearnAPI.Models
                     .HasColumnName("CONTENT");
 
                 entity.Property(e => e.Answer)
-                    .IsRequired()
+                    // .IsRequired()
                     .HasColumnName("ANSWER");
             });
 

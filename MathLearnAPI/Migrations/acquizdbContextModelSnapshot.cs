@@ -71,15 +71,6 @@ namespace MathLearnAPI.Migrations
                         .HasColumnName("ID")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Attachment1")
-                        .HasColumnName("ATTACHMENT1");
-
-                    b.Property<string>("Attachment2")
-                        .HasColumnName("ATTACHMENT2");
-
-                    b.Property<string>("Attachment3")
-                        .HasColumnName("ATTACHMENT3");
-
                     b.Property<bool?>("CanGenerate")
                         .HasColumnName("CAN_GENERATE");
 
@@ -142,21 +133,6 @@ namespace MathLearnAPI.Migrations
                     b.Property<string>("Answer")
                         .IsRequired()
                         .HasColumnName("ANSWER");
-
-                    b.Property<string>("Attachment1")
-                        .HasColumnName("ATTACHMENT1");
-
-                    b.Property<string>("Attachment2")
-                        .HasColumnName("ATTACHMENT2");
-
-                    b.Property<string>("Attachment3")
-                        .HasColumnName("ATTACHMENT3");
-
-                    b.Property<string>("Attachment4")
-                        .HasColumnName("ATTACHMENT4");
-
-                    b.Property<string>("Attachment5")
-                        .HasColumnName("ATTACHMENT5");
 
                     b.Property<string>("BriefCont")
                         .IsRequired()

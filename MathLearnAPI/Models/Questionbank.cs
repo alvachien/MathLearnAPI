@@ -19,11 +19,6 @@ namespace MathLearnAPI.Models
         public string BriefCont { get; set; }
         [Required]
         public string Content { get; set; }
-        public string Attachment1 { get; set; }
-        public string Attachment2 { get; set; }
-        public string Attachment3 { get; set; }
-        public string Attachment4 { get; set; }
-        public string Attachment5 { get; set; }
         public string Answer { get; set; }
 
         public ICollection<Qbklink> Qbklink { get; set; }

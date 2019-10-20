@@ -38,9 +38,6 @@ namespace MathLearnAPI.Migrations
                     CATEGORY = table.Column<byte>(nullable: true),
                     NAME = table.Column<string>(maxLength: 50, nullable: false),
                     CONTENT = table.Column<string>(nullable: false),
-                    ATTACHMENT1 = table.Column<string>(nullable: true),
-                    ATTACHMENT2 = table.Column<string>(nullable: true),
-                    ATTACHMENT3 = table.Column<string>(nullable: true),
                     CAN_GENERATE = table.Column<bool>(nullable: true)
                 },
                 constraints: table =>
@@ -57,11 +54,6 @@ namespace MathLearnAPI.Migrations
                     CATEGORY = table.Column<byte>(nullable: false),
                     BRIEF_CONT = table.Column<string>(maxLength: 50, nullable: false),
                     CONTENT = table.Column<string>(nullable: false),
-                    ATTACHMENT1 = table.Column<string>(nullable: true),
-                    ATTACHMENT2 = table.Column<string>(nullable: true),
-                    ATTACHMENT3 = table.Column<string>(nullable: true),
-                    ATTACHMENT4 = table.Column<string>(nullable: true),
-                    ATTACHMENT5 = table.Column<string>(nullable: true),
                     ANSWER = table.Column<string>(nullable: false)
                 },
                 constraints: table =>

@@ -19,9 +19,6 @@ namespace MathLearnAPI.Models
         public string Name { get; set; }
         [Required]
         public string Content { get; set; }
-        public string Attachment1 { get; set; }
-        public string Attachment2 { get; set; }
-        public string Attachment3 { get; set; }
         public bool? CanGenerate { get; set; }
 
         public ICollection<Qbklink> Qbklink { get; set; }

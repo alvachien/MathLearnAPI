@@ -22,5 +22,19 @@ namespace MathLearnAPI.Models
         public bool? CanGenerate { get; set; }
 
         public ICollection<Qbklink> Qbklink { get; set; }
+
+        public void CopyForCreate(Knowledge other)
+        {
+            if (other.Category.HasValue)
+                this.Category = other.Category.Value;
+            else
+                this.Category = null;
+            this.Name = other.Name;
+            this.Content = other.Content;
+            if (other.CanGenerate.HasValue)
+                this.CanGenerate = other.CanGenerate.Value;
+            else
+                this.CanGenerate = null;
+        }
     }
 }

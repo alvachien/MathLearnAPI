@@ -133,6 +133,13 @@ namespace MathLearnAPI.Controllers
                 return BadRequest(ModelState);
             }
 
+            //Knowledge k2 = new Knowledge();
+            //k2.CopyForCreate(knowledge);
+            //_context.Knowledge.Add(k2);
+            //await _context.SaveChangesAsync();
+
+            //return Created(k2);
+            knowledge.Id = 0; // Clear.
             _context.Knowledge.Add(knowledge);
             await _context.SaveChangesAsync();
 
